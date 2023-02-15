@@ -1,0 +1,48 @@
+<%- include('partials/header'); -%>
+    <script src="../scripts/SimpleImage.js">
+    </script>
+    <script src="../scripts/stegnography.js">
+    </script>
+    <script src="../scripts/helperMethods.js ">
+    </script>
+    <script src="../scripts/ImageLoader.js ">
+    </script>
+    <script src="../scripts/PixOrderChangeEncrypt.js ">
+    </script>
+    <script src="../scripts/PixEncrypDecrypt.js ">
+    </script>
+    <h2>Steganogrphy Image Encryption</h2>
+    <div id="maindiv">
+        <div id="div1">
+            <label>Upload Cover Image</label>
+            <input type="file" multiple="false" accept="image/*" id="cover" onchange="loadcover(event)"><br>
+            <img id="coverimg"><br>
+        </div>
+        <div id="div2">
+            <label>Upload Secret Image</label>
+            <input type="file" multiple="false" accept="image/*" id="secret" onchange="loadsecret(event)"><br>
+            <img id="secretimg"><br>
+        </div>
+        <div id="clear"></div>
+
+
+
+        <div id="output">
+            <label for="Encryptkeys">Enter Secret key to encrypt</label>
+
+            <input type="number" name="Encryptkeys" id="secretkey">
+            <input type="button" id="hide" value="hide" onclick="encrypt();">
+            <br>
+            <canvas id="can1"></canvas>
+            <br>
+            <input type="button" id="hide" value="Download" onclick="DownloadEncrypted()">
+            <br>
+            <label>Want to Decrypt?</label>
+            <input type="button" id="dec" value="Decrypt" onclick="location.assign('/Decrypt');">
+            <br>
+        </div>
+    </div>
+
+    </body>
+
+    </html>

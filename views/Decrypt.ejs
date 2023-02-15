@@ -1,0 +1,35 @@
+<%- include('partials/header'); -%>
+    <script src="../scripts/SimpleImage.js">
+    </script>
+    <script src="../scripts/stegnography.js">
+    </script>
+    <script src="../scripts/helperMethods.js ">
+    </script>
+    <script src="../scripts/ImageLoader.js ">
+    </script>
+    <script src="../scripts/PixOrderChangeDecrypt.js ">
+    </script>
+    <script src="../scripts/PixEncrypDecrypt.js ">
+    </script>
+    <h2>Steganogrphy Image Decryption</h2>
+    <div id="maindiv">
+        <div id="output">
+            <label>Upload Image to Decrypt</label>
+            <input type="file" multiple="false" accept="image/*" id="decrypt" onchange="loadEncrypt(event)"><br>
+            <img id="decryptimg" height="200px" width="auto"><br>
+            <label for="Encryptkeys">Enter Secret key to encrypt</label>
+
+            <input type="number" name="Encryptkeys" id="secretkey"><br>
+            <input type="button" id="dec" value="decrypt" onclick="decrypt()"><br>
+            <canvas id="can2"></canvas>
+            <br>
+            <input type="button" id="hide" value="Download" onclick="DownloadDecrypted()">
+            <label>Want to Encrypt?</label>
+            <input type="button" id="dec" value="Encrypt" onclick="location.assign('/Encrypt');">
+            <br>
+        </div>
+    </div>
+
+    </body>
+
+    </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISAA | Stegnography</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/x-icon" href="/lock.ico">
+</head>
+
+<body>
+    <nav>
+        <h1><a href="/">Image stegnography</a></h1>
+        <ul>
+            <% if (user) { %>
+                <li>Welcome,
+                    <%= user.name %>
+                </li>
+                <li><a id="headerbtn" href="/logout">Log out</a></li>
+                <% } else { %>
+                    <li><a id="headerbtn" href="/login">Log in</a></li>
+                    <li><a id="headerbtn" href="/signup" class="btn">Sign up</a></li>
+                    <% } %>
+        </ul>
+    </nav>

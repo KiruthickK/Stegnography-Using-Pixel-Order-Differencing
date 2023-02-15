@@ -1,0 +1,50 @@
+<%- include('partials/header'); -%>
+    <script src="../scripts/SimpleImage.js">
+    </script>
+    <script src="../scripts/stegnography.js">
+    </script>
+    <script src="../scripts/helperMethods.js ">
+    </script>
+    <script src="../scripts/ImageLoader.js ">
+    </script>
+    <script src="../scripts/PixOrderChange.js ">
+    </script>
+    <script src="../scripts/PixEncrypDecrypt.js ">
+    </script>
+    <div id="maindiv">
+        <div id="div1">
+            <label>Upload Cover Image</label>
+            <input type="file" multiple="false" accept="image/*" id="cover" onchange="loadcover(event)"><br>
+            <img id="coverimg" height="200px" width="auto"><br>
+        </div>
+        <div id="div2">
+            <label>Upload Secret Image</label>
+            <input type="file" multiple="false" accept="image/*" id="secret" onchange="loadsecret(event)"><br>
+            <img id="secretimg" height="200px" width="auto"><br>
+        </div>
+        <div id="clear"></div>
+
+
+
+        <div id="output">
+            <input type="button" id="hide" value="hide" onclick="encrypt();">
+            <br>
+            <canvas id="can1" style="border:1px solid"></canvas>
+            <br>
+            <input type="button" id="hide" value="Download" onclick="DownloadEncrypted()">
+            <br>
+            <label>Upload Image to Decrypt</label>
+            <input type="file" multiple="false" accept="image/*" id="decrypt" onchange="loadEncrypt(event)"><br>
+            <img id="decryptimg" height="200px" width="auto"><br>
+            <input type="button" id="dec" value="decrypt" onclick="decrypt()"><br>
+            <canvas id="can2" style="border:1px solid"></canvas>
+            <br>
+            <input type="button" id="hide" value="Download" onclick="DownloadDecrypted()">
+
+            <br>
+        </div>
+    </div>
+
+    </body>
+
+    </html>

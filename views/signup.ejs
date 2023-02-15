@@ -1,0 +1,67 @@
+<%- include('partials/header'); -%>
+
+    <form action="/signup">
+        <h2>Sign up</h2>
+        <label for="name">Name</label>
+        <input type="text" name="name" required />
+        <label for="email">Email</label>
+        <input type="text" name="email" required />
+        <div class="email error"></div>
+        <label for="password">Password</label>
+        <input type="password" name="password" required />
+        <label for="secret">Secret Key</label>
+        <input type="password" name="secret" required />
+        <div class="password error"></div>
+        <button>Sign up</button>
+    </form>
+
+    <%- include('partials/footer'); -%>
+
+        <script>
+            const form = document.querySelector('form');
+            const emailError = document.querySelector('.email.error');
+            const passwordError = document.querySelector('.password.error');
+
+            form.addEventListener('submit', async(e) => {
+                e.preventDefault();
+
+                // reset errors
+                emailError.textContent = '';
+                passwordError.textContent = '';
+
+                // get values
+                const email = form.email.value;
+                const password = form.password.value;
+                const name = form.name.value;
+                const secret_key = form.secret.value;
+                if (secret_key == "12345") {
+                    try {
+                        const res = await fetch('/signup', {
+                            method: 'POST',
+                            body: JSON.stringify({
+                                name,
+                                email,
+                                password
+                            }),
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        });
+                        const data = await res.json();
+                        console.log(data);
+                        if (data.errors) {
+                            emailError.textContent = data.errors.email;
+                            passwordError.textContent = data.errors.password;
+                        }
+                        if (data.user) {
+                            location.assign('/');
+                        }
+
+                    } catch (err) {
+                        console.log(err);
+                    }
+                } else {
+                    alert("Activation Key Does not matching");
+                }
+            });
+        </script>
