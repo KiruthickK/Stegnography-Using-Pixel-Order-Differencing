@@ -13,7 +13,7 @@ requirements and how to run:
   
   <li>search "localhost:3000" in the browser to open the website</li>
 </ul>
-#Methodology
+<h3>Methodology</h3>
 In this study an improvised image steganography method called Pixel Order 
 Differencing (POD) with reference to pixel value differencing. Where in PVD, the pixels which 
 are going to be hidden will choose the cover image pixel where the cover image pixel will the 
