@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.set('view engine', 'ejs');
 
 // database connection
-const dbURI = 'mongodb+srv://Kiruthick_nvp_database:OurIwpProject@nodelearn.odiqvlt.mongodb.net/node-auth?retryWrites=true&w=majority';
+const dbURI = 'Edit Here';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
     .then((result) => {
         app.listen(3000);
