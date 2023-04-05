@@ -12,6 +12,7 @@ requirements and how to run:
   <li>run "node app" to start the serve</li>
   
   <li>search "localhost:3000" in the browser to open the website</li>
+  <li>Create a Database connection with MongoDB and paste the connection link in the app.js</li>
 </ul>
 <h3>Methodology</h3>
 In this study an improvised image steganography method called Pixel Order 
