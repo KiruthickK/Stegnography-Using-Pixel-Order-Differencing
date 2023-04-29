@@ -21,6 +21,10 @@
             var otp = 0;
             async function generateOtp() {
                 email = document.getElementById("email").value;
+                if (email == null) {
+                    alert("Fill the contents!");
+                    return;
+                }
                 try {
                     const res = await fetch('/generateOtp', {
                         method: 'POST',

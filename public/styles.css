@@ -28,6 +28,16 @@ footer {
     color: #444;
 }
 
+#OTPBtn:hover {
+    background-color: #817676;
+}
+
+#OTPBtn:active {
+    background-color: #232a23;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
 #secretkey {
     width: 200px;
 }
