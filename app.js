@@ -1,8 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
-const { requireAuth, checkUser } = require('./middleware/authMiddleware');
+// const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
 const app = express();
 
@@ -26,4 +25,3 @@ app.listen(process.env.PORT || 3000, () => console.log('listening ...'));
 app.get('/', (req, res) => res.render('home'));
 app.get('/decrypt', (req, res) => res.render('Decrypt'));
 app.get('/encrypt', (req, res) => res.render('Encrypt'));
-app.use(authRoutes);
