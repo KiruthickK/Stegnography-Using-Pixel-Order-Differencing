@@ -15,13 +15,14 @@ app.use(cookieParser());
 // view engine
 app.set('view engine', 'ejs');
 
+app.listen(3000);
 // database connection
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
-    .then((result) => {
-        app.listen(3000);
-        console.log("Listening..");
-    })
-    .catch((err) => console.log(err));
+// mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+//     .then((result) => {
+//         app.listen(3000);
+//         console.log("Listening..");
+//     })
+//     .catch((err) => console.log(err));
 app.get('/', (req, res) => res.render('home'));
 app.get('/decrypt', (req, res) => res.render('Decrypt'));
 app.get('/encrypt', (req, res) => res.render('Encrypt'));
