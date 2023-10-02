@@ -15,7 +15,7 @@ app.use(cookieParser());
 // view engine
 app.set('view engine', 'ejs');
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000, () => console.log('listening ...'));
 // database connection
 // mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
 //     .then((result) => {
