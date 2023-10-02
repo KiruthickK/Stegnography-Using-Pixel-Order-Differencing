@@ -16,17 +16,13 @@ app.use(cookieParser());
 app.set('view engine', 'ejs');
 
 // database connection
-const dbURI = 'Edit Here';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
     .then((result) => {
         app.listen(3000);
         console.log("Listening..");
     })
     .catch((err) => console.log(err));
-
-// routes
-app.get('*', checkUser);
 app.get('/', (req, res) => res.render('home'));
-app.get('/decrypt', requireAuth, (req, res) => res.render('Decrypt'));
-app.get('/encrypt', requireAuth, (req, res) => res.render('Encrypt'));
+app.get('/decrypt', (req, res) => res.render('Decrypt'));
+app.get('/encrypt', (req, res) => res.render('Encrypt'));
 app.use(authRoutes);
